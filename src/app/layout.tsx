@@ -14,10 +14,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 })
 
-export const metadata: Metadata = {
-  title: "Growth",
-  description: "Performance Media for Incremental Growth",
+
+export const metadata = {
+  title: "Growth Experiment",
+  description:
+    "Conversion-focused landing page experiment built and deployed with React.",
+  openGraph: {
+    title: "Growth Experiment",
+    description:
+      "A production-ready growth marketing experiment focused on measurable performance.",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 }
+
 
 export default function RootLayout({
   children,
