@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+}
+
+:root {
+  --bg: #060a18;
+  --text: #eaf0ff;
+  --muted: rgba(234, 240, 255, 0.78);
+  --stroke: rgba(234, 240, 255, 0.12);
+  --stroke-strong: rgba(234, 240, 255, 0.18);
+  --accent: #3c7bff;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Manrope", system-ui, -apple-system, sans-serif;
+}
+
+.heroGlow::before {
+  content: "";
+  position: absolute;
+  top: -400px;
+  left: -400px;
+  right: -400px;
+  bottom: -300px;
+  background:
+    radial-gradient(600px 600px at 60% 42%, rgba(124, 58, 237, 1), transparent 60%),
+    radial-gradient(700px 600px at 56% 54%, rgb(0 77 202), transparent 66%),
+    radial-gradient(1200px 1000px at 62% 50%, rgba(110, 168, 255, 0.2), transparent 75%);
+  filter: blur(60px);
+  opacity: 0.9;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.heroGlow.motionOn::before {
+  animation: heroBlurPulse 6.2s ease-in-out infinite;
+}
+
+
+.finalGlow::before {
+  content: "";
+  position: absolute;
+  top: -300px;
+  left: -400px;
+  right: -400px;
+  bottom: -300px;
+
+  background:
+    radial-gradient(900px 600px at 50% 40%, rgba(47, 107, 255, 0.35), transparent 70%),
+    radial-gradient(1200px 800px at 50% 100%, rgba(110, 168, 255, 0.18), transparent 75%);
+
+  filter: blur(60px);
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes heroBlurPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    filter: blur(44px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(36px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroGlow.motionOn::before {
+    animation: none;
+  }
+}
+
