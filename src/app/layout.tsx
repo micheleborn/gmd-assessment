@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Axon",
+  title: "Growth",
   description: "Performance Media for Incremental Growth",
 }
 

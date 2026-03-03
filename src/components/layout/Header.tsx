@@ -1,4 +1,5 @@
 "use client"
+import { RocketIcon } from "@/components/icons/RocketIcon"
 
 type HeaderProps = {
   siteName?: string
@@ -12,16 +13,18 @@ const NAV = [
 ] as const
 
 export default function Header({
-  siteName = "Axon",
+  siteName = "Growth",
   current,
 }: HeaderProps) {
   return (
 
         <header className="fixed top-0 left-0 right-0 z-50 w-full bg-black border-b border-white/10">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <div className="text-sm font-medium tracking-tight text-white">
-          {siteName}
-        </div>
+    <div className="flex items-center gap-2 text-sm font-medium tracking-tight text-white">
+<RocketIcon className="h-5 w-5 text-blue-600" />
+  <span>{siteName}</span>
+
+</div>
 
         <nav className="flex items-center gap-2">
           {NAV.map((n) => {

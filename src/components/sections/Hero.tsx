@@ -73,7 +73,7 @@ export default function Hero({
           <div className="mt-10 flex flex-wrap gap-4">
             <button
               onClick={onPrimaryClick}
-              className="rounded-md bg-[#2f6bff] px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition"
+              className="rounded-md bg-[#2f6bff] px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:opacity-90"
             >
               {primaryCta}
             </button>
@@ -81,7 +81,7 @@ export default function Hero({
             {secondaryCta && (
               <button
                 onClick={onSecondaryClick}
-                className="rounded-md border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white hover:bg-white/10 transition"
+               className="rounded-md border border-white/15 bg-white/5 px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:bg-white/10"
               >
                 {secondaryCta}
               </button>

@@ -54,16 +54,23 @@ const signupUrl = `https://mmmbop.net/?referralCode=${encodeURIComponent(
   <Header current={variant} />
 <div className="mx-auto max-w-5xl px-6 pt-16 pb-16">
 
-        <Hero
-          eyebrow={v.hero.eyebrow}
-          headline={v.hero.headline}
-          subhead={v.hero.subhead}
-          primaryCta={v.hero.primaryCta}
-          secondaryCta={v.hero.secondaryCta}
-          onPrimaryClick={() => handleSignupClick("hero")}
-        />
+<Hero
+  eyebrow={v.hero.eyebrow}
+  headline={v.hero.headline}
+  subhead={v.hero.subhead}
+  primaryCta={v.hero.primaryCta}
+  secondaryCta={v.hero.secondaryCta}
+  onPrimaryClick={() => handleSignupClick("hero")}
+  onSecondaryClick={() =>
+    document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })
+  }
+/>
 
-       <Features title={v.features.title} items={v.features.items} />
+<Features
+  title={v.features.title}
+  items={v.features.items}
+  panelLabel={v.panelLabel}
+/>
 
       <MidCTA
   text="Add a channel without adding volatility"

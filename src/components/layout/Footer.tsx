@@ -6,8 +6,8 @@ type FooterProps = {
 }
 
 export default function Footer({
-  left = "© Axon",
-  right = "Privacy • Terms",
+  left = "© 2026 Michele Born · Independent experiment",
+  right = "Built with React, instrumented with PostHog.",
 }: FooterProps) {
   return (
     <footer className="mt-16 border-t border-white/10 py-10">
