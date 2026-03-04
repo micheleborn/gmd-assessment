@@ -62,7 +62,7 @@ export default function Hero({
             {eyebrow}
           </p>
 
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-white">
+          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-regular tracking-tight text-white">
             {headline}
           </h1>
 
@@ -73,7 +73,7 @@ export default function Hero({
           <div className="mt-10 flex flex-wrap gap-4">
             <button
               onClick={onPrimaryClick}
-              className="rounded-md bg-[#2f6bff] px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:opacity-90"
+              className="rounded-md bg-[#1e4ed8] px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:opacity-90"
             >
               {primaryCta}
             </button>

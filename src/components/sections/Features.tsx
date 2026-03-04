@@ -22,7 +22,7 @@ export default function Features({
   {panelLabel}
 </div>
 
-      <h2 className="mt-5 text-3xl font-semibold tracking-tight">{title}</h2>
+      <h2 className="mt-5 text-3xl font-regular tracking-tight">{title}</h2>
 
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         {items.map((f, i) => (

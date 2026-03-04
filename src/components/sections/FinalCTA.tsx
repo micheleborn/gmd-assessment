@@ -20,14 +20,14 @@ export default function FinalCTA({ headline, primaryCta, onPrimaryClick }: Final
 
       {/* content */}
       <div className="relative z-10 mx-auto max-w-5xl px-6 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
+        <h2 className="text-3xl md:text-4xl font-regular tracking-tight text-white">
           {headline}
         </h2>
 
         <div className="mt-10 flex justify-center">
           <button
             onClick={onPrimaryClick}
-           className="rounded-md bg-[#2f6bff] px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:opacity-90"
+           className="rounded-md bg-[#1e4ed8] px-6 py-3 text-sm font-medium text-white cursor-pointer transition-all duration-200 hover:-translate-y-[5px] hover:opacity-90"
           >
             {primaryCta}
           </button>

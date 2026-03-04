@@ -26,8 +26,8 @@ export default function Landing({ variant }: { variant: VariantKey }) {
     return () => window.clearTimeout(id)
   }, [variant])
 
-// Placeholder while testing (Assignment target later: https://ads.axon.ai/auth/signup)
-const signupUrl = `https://mmmbop.net/?referralCode=${encodeURIComponent(
+// Assignment target: https://ads.axon.ai/auth/signup)
+const signupUrl = `https://ads.axon.ai/auth/signup/?referralCode=${encodeURIComponent(
   v.referralCode
 )}`
 
