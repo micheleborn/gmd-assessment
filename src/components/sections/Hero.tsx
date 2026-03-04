@@ -21,7 +21,7 @@ export default function Hero({
 }: HeroProps) {
   return (
  <section className="relative overflow-hidden py-24 md:py-28 w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-  {/* backgrounds + chart stay absolute inset-0 as you already have */}
+  {/* backgrounds */}
   <div className="relative z-10 mx-auto max-w-5xl">
 
       {/* ===== Animated Gradient Glow ===== */}

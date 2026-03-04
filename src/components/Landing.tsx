@@ -26,7 +26,7 @@ export default function Landing({ variant }: { variant: VariantKey }) {
     return () => window.clearTimeout(id)
   }, [variant])
 
-// Assignment target: https://ads.axon.ai/auth/signup)
+// Assignment target: 
 const signupUrl = `https://ads.axon.ai/auth/signup/?referralCode=${encodeURIComponent(
   v.referralCode
 )}`

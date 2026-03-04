@@ -1,5 +1,3 @@
-// src/lib/variants.ts
-
 export type VariantKey = "control" | "variant-1" | "variant-2"
 
 export type FeatureIconKey =
@@ -20,18 +18,7 @@ export type VariantMethod = "USP Baseline" | "Authority + Social Proof" | "Risk 
 
 export type VariantConfig = {
   key: VariantKey
-
-  /**
-   * Psychological / persuasion framework used for this variant.
-   * (Shown in UI if you want; also useful for analytics/debugging.)
-   */
   method: VariantMethod
-
-  /**
-   * Two different labels used in the UI:
-   * - heroLabel: small label above hero text
-   * - panelLabel: small label above the second panel (above cards)
-   */
   heroLabel: string
   panelLabel: string
 
