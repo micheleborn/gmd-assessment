@@ -1,10 +1,8 @@
-<<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 
-Axon – Growth Marketing Designer Assessment
+Growth Marketing Designer Assessment
 
-This repository contains my submission for the Axon Growth Marketing Designer assessment.
 
 The project implements three landing page variants built with Next.js + TypeScript, designed to test different persuasion frameworks for a paid acquisition landing page.
 
@@ -127,19 +125,6 @@ Routes resolve the correct configuration from variants.ts and pass the content t
 
 This pattern keeps the layout and UI system consistent while allowing messaging differences.
 
-CTA Routing
-
-All CTAs redirect to the Axon signup endpoint:
-
-https://ads.axon.ai/auth/signup
-
-A deterministic referral code is appended per variant.
-
-Example:
-
-https://ads.axon.ai/auth/signup?referralCode=VARIANT_1
-
-Referral codes are defined in the variant configuration.
 
 Analytics Tracking
 
@@ -237,4 +222,4 @@ server-side experiment assignment
 Author
 
 Michele Born
-Frontend developer – WordPress / React / experimentation systems
+Web developer – Data Analyst - Architect
