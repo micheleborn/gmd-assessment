@@ -1,41 +1,240 @@
 <<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
 
-First, run the development server:
+Axon – Growth Marketing Designer Assessment
 
-```bash
+This repository contains my submission for the Axon Growth Marketing Designer assessment.
+
+The project implements three landing page variants built with Next.js + TypeScript, designed to test different persuasion frameworks for a paid acquisition landing page.
+
+The implementation focuses on:
+
+deterministic experiment structure
+
+centralized variant configuration
+
+reusable UI components
+
+analytics instrumentation
+
+minimal duplication (DRY architecture)
+
+Project Goals
+
+The objective of the exercise is to demonstrate the ability to combine:
+
+conversion-focused design thinking
+
+growth experimentation strategy
+
+clean frontend architecture
+
+The project simulates a typical growth experiment where multiple landing page variants are deployed and measured using analytics.
+
+Variants
+
+Three variants are implemented as independent routes.
+
+Route	Variant	Strategy
+/control	Control	Baseline messaging
+/variant-1	Variant 1	Social proof emphasis
+/variant-2	Variant 2	Scarcity / urgency
+
+Each route renders the same component system while pulling its content and behavior from a centralized configuration.
+
+Architecture
+
+The project is structured as a single Next.js application with route-based variants.
+
+Key design principles:
+
+DRY component architecture
+
+variant-driven configuration
+
+deterministic routing
+
+analytics instrumentation at interaction level
+
+src
+ ├── app
+ │   ├── control
+ │   ├── variant-1
+ │   └── variant-2
+ │
+ ├── components
+ │   ├── Hero
+ │   ├── FeatureGrid
+ │   ├── Proof
+ │   ├── Testimonial
+ │   ├── MidCTA
+ │   └── FinalCTA
+ │
+ ├── lib
+ │   ├── variants.ts
+ │   └── tracking.ts
+Variant Configuration
+
+All variant content is defined in a centralized configuration file:
+
+src/lib/variants.ts
+
+This file defines:
+
+messaging
+
+CTA text
+
+testimonials
+
+feature content
+
+referral codes
+
+Example structure:
+
+export type VariantKey = "control" | "variant-1" | "variant-2"
+
+export type VariantConfig = {
+  key: VariantKey
+  method: "USP" | "Social Proof" | "Scarcity/FOMO"
+  referralCode: string
+  hero: {...}
+  proof: {...}
+  features: {...}
+  testimonial: {...}
+  finalCta: {...}
+}
+
+Using a centralized configuration ensures:
+
+consistent rendering across variants
+
+easier experimentation
+
+minimal duplication
+
+Routing
+
+Each variant is mapped to its own route:
+
+/control
+/variant-1
+/variant-2
+
+Routes resolve the correct configuration from variants.ts and pass the content to shared UI components.
+
+This pattern keeps the layout and UI system consistent while allowing messaging differences.
+
+CTA Routing
+
+All CTAs redirect to the Axon signup endpoint:
+
+https://ads.axon.ai/auth/signup
+
+A deterministic referral code is appended per variant.
+
+Example:
+
+https://ads.axon.ai/auth/signup?referralCode=VARIANT_1
+
+Referral codes are defined in the variant configuration.
+
+Analytics Tracking
+
+CTA clicks trigger a PostHog event before redirecting.
+
+Event name:
+
+signed_up
+
+Captured properties:
+
+variant
+
+CTA label
+
+placement (hero, mid, final)
+
+target URL
+
+Tracking is handled in a small helper utility:
+
+trackSignupIntentAndRedirect()
+
+This function:
+
+fires the PostHog event
+
+waits briefly
+
+performs the redirect
+
+The short delay ensures the event is transmitted before navigation occurs.
+
+Preventing Duplicate Events
+
+Each CTA click triggers a single analytics event.
+
+Duplicate firing is prevented by:
+
+centralizing the tracking function
+
+attaching it directly to the CTA interaction
+
+avoiding multiple listeners
+
+Running Locally
+
+Install dependencies:
+
+npm install
+
+Start the dev server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+http://localhost:3000/control
+http://localhost:3000/variant-1
+http://localhost:3000/variant-2
+Experiment Measurement
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The experiment can be evaluated using PostHog by tracking the signed_up event across variants.
 
-## Learn More
+Example experiment configuration:
 
-To learn more about Next.js, take a look at the following resources:
+Experiment: landing-page-variants
+Variants: control, variant-1, variant-2
+Metric: signed_up
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This allows conversion comparison across the three approaches.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Notes
 
-## Deploy on Vercel
+This project prioritizes:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+clean separation between experiment configuration and UI
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# gmd-assessment
-Growth Marketing Designer Position Assessment
->>>>>>> dc6c9fc3414314ab3d1a9b29da91a612e3f21f47
+reusable components
+
+deterministic variant behavior
+
+lightweight analytics instrumentation
+
+In a production environment, this architecture could be extended with:
+
+feature flags
+
+automatic traffic allocation
+
+experiment analysis pipelines
+
+server-side experiment assignment
+
+Author
+
+Michele Born
+Frontend developer – WordPress / React / experimentation systems
