@@ -27,7 +27,7 @@ export default function Landing({ variant }: { variant: VariantKey }) {
   }, [variant])
 
 // Assignment target: 
-const signupUrl = `https://ads.axon.ai/auth/signup/?referralCode=${encodeURIComponent(
+const signupUrl = `https://quietoode.com/?referralCode=${encodeURIComponent(
   v.referralCode
 )}`
 

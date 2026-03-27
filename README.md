@@ -1,4 +1,4 @@
-Growth Marketing Designer Assessment
+Growth Marketing Experiment
 
 This repository contains a Next.js + TypeScript landing page experiment implementing three variants designed to test different persuasion frameworks for paid acquisition.
 
@@ -83,4 +83,5 @@ http://localhost:3000/variant-2
 Author
 
 Michele Born
+micheleborn.com
 Web Developer • Data Analyst • Architect
